@@ -5,6 +5,23 @@ import (
 	"math"
 )
 
+func printMessage(message string) {
+	fmt.Println(message)
+}
+
+// func tripleArgument(a int, b int, c string) {
+func tripleArgument(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func doubledValue(a int) int {
+	return a * 2
+}
+
+func returnsTwoValues(a int) (b, c int) {
+	return a, a * 2
+}
+
 // go run src/main.go
 
 func main() {
@@ -106,5 +123,21 @@ func main() {
 	falsevar := false
 	fmt.Printf("true %t\n", truevar) //~ %t para valores boooleanos b
 	fmt.Printf("false %t\n", falsevar)
+
+	//? funciones
+	printMessage("Hello world")
+	tripleArgument(1, 2, "Hi!!!")
+
+	value := doubledValue(34)
+
+	fmt.Println(value)
+
+	value1, value2 := returnsTwoValues(2)
+
+	fmt.Println("value1 y value2:", value1, value2)
+
+	// si quiero ignorar un valor de retorno:
+	_, value3 := returnsTwoValues(5)
+	fmt.Println("value3:", value3)
 
 }
