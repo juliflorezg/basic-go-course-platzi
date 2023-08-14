@@ -20,7 +20,7 @@ func main() {
 	var height int = 14
 	var area int
 
-	fmt.Println(base, height, area)
+	fmt.Println(base, height, area) // area va a ser 0 por el valor por defecto
 
 	// Zero values -> valor por defecto que van a tener las variables si no se les ha asignado un valor
 
@@ -79,4 +79,32 @@ func main() {
 
 	areaCirculo := math.Pi * math.Pow(radio, 2) // radio al cuadrado o radio a la segunda potencia
 	println("Area Circulo:", areaCirculo)
+
+	// Paquete fmt
+
+	helloMessage := "Hello"
+	worldMessage := "World"
+
+	fmt.Println(helloMessage, worldMessage)
+	fmt.Println(helloMessage, worldMessage)
+
+	// Printf
+	name := "platzi"
+	courses := 500
+	fmt.Printf("%s tiene más de %d cursos\n", name, courses) //%s se usa para decir que ahí va a ir un string y %d es para dígitos
+	fmt.Printf("%v tiene más de %v cursos\n", name, courses) //%v se usa para decir que no se sabe el tipo de dato de antemano
+
+	// Sprintf
+	message := fmt.Sprintf("%s tiene más de %d cursos`", name, courses) // Sprintf genera una string, pero no la imprime en consola
+	fmt.Println("message:", message)
+
+	// Para conocer el tipo de datos
+	fmt.Printf("helloMessage: %T\n", helloMessage)
+	fmt.Printf("courses: %T\n", courses)
+
+	truevar := true
+	falsevar := false
+	fmt.Printf("true %t\n", truevar) //~ %t para valores boooleanos b
+	fmt.Printf("false %t\n", falsevar)
+
 }
