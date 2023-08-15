@@ -232,4 +232,29 @@ func main() {
 	fmt.Println("are user & password ok:", checkUserAndPassword("lol", "fadsf"))
 	fmt.Println("are user & password ok:", checkUserAndPassword("pepito", "1234jejeje"))
 
+	//* switch
+
+	// modulo := 4 % 2
+
+	// switch modulo {
+	switch modulo := 4 % 2; modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
+	}
+
+	// switch sin condición
+
+	value := 10
+
+	switch {
+	case value > 100:
+		fmt.Println("Es mayor que 100")
+	case value < 0:
+		fmt.Println("Es menor que 0")
+	default:
+		fmt.Println("Está entre 0 y 100")
+	}
+
 }
