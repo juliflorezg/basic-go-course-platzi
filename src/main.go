@@ -177,4 +177,27 @@ func main() {
 		fmt.Printf("Posición: %d, numero par: %d \n", i, par)
 	}
 
+	for i, c := range "golang" {
+		fmt.Println(i, c)
+	}
+
+	// 0 103 -> index & rune
+	// 1 111
+	// 2 108
+	// 3 97
+	// 4 110
+	// 5 103
+
+	// maps
+	var m map[string]int
+	m = make(map[string]int, 2)
+	fmt.Println(m)
+
+	m["uno"] = 1
+	m["dos"] = 2
+	m["three"] = 3
+
+	fmt.Println(m)
+	fmt.Printf("m type: %T", m)
+
 }
