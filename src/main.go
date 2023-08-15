@@ -118,9 +118,10 @@ func main() {
 	// fmt.Printf("helloMessage: %T\n", helloMessage)
 	// fmt.Printf("courses: %T\n", courses)
 
-	// truevar := true
+	truevar := true
 	// falsevar := false
 	// fmt.Printf("true %t\n", truevar) //~ %t para valores boooleanos b
+	fmt.Printf("true %T\n", truevar)
 	// fmt.Printf("false %t\n", falsevar)
 
 	// //? funciones
@@ -198,8 +199,37 @@ func main() {
 	m["three"] = 3
 
 	fmt.Println(m)
-	fmt.Printf("m type: %T", m)
+	fmt.Printf("m type: %T \n", m)
 
 	//** https://devhints.io/go
+
+	//? condicionales
+
+	// reto condicionales
+	// funcion que verifica si un numero es par o impar
+	checkOddOrEven := func(a int) string {
+		if a%2 == 0 {
+			return "el numero es par"
+		} else {
+			return "el numero es impar"
+		}
+	}
+
+	// https://forum.golangbridge.org/t/writing-function-inside-and-outside-of-func-main/13268/3
+
+	fmt.Println(checkOddOrEven(2))
+	fmt.Println(checkOddOrEven(3))
+	fmt.Println(checkOddOrEven(4))
+
+	checkUserAndPassword := func(user, password string) (result bool) {
+		if user == "pepito" && password == "1234jejeje" {
+			return true
+		} else {
+			return false
+		}
+	}
+
+	fmt.Println("are user & password ok:", checkUserAndPassword("lol", "fadsf"))
+	fmt.Println("are user & password ok:", checkUserAndPassword("pepito", "1234jejeje"))
 
 }
