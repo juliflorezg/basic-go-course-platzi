@@ -200,4 +200,6 @@ func main() {
 	fmt.Println(m)
 	fmt.Printf("m type: %T", m)
 
+	//** https://devhints.io/go
+
 }
