@@ -257,4 +257,29 @@ func main() {
 		fmt.Println("Está entre 0 y 100")
 	}
 
+	//> keywords importantes
+
+	//? defer
+	// defer va a posponer la ejecución hasta justo antes que el programa main termine
+	// Se puede usar para cuando nos conectamos a una BD, usamos defer para cerrar la conexión a la BD
+	// También para cuando usamos un archivo, ponemos en defer que cierre el archivo
+	defer fmt.Println("lol")
+	fmt.Println("jejeje")
+
+	//? continue
+
+	for i := 0; i <= 10; i++ {
+		if i == 2 {
+			fmt.Println("Continue in 2")
+			continue // continue no permite la ejecución de las siguientes lineas de código en el bucle, salta o --continúa-- a la siguiente iteración
+			// en este caso, cuando i == 2, el println de 2 más abajo, no se va a ejecutar
+		}
+
+		fmt.Println(i)
+
+		if i == 7 {
+			break // break sale del ciclo actual
+		}
+
+	}
 }
