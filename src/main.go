@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"strconv"
 )
 
 func printMessage(message string) {
@@ -231,6 +233,15 @@ func main() {
 
 	fmt.Println("are user & password ok:", checkUserAndPassword("lol", "fadsf"))
 	fmt.Println("are user & password ok:", checkUserAndPassword("pepito", "1234jejeje"))
+
+	// convertir un numero que viene en texto a entero
+	// convertedValue, err := strconv.Atoi("dsds") //! strconv.Atoi: parsing "dsds": invalid syntax
+	convertedValue, err := strconv.Atoi("53")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("convertedValue", convertedValue)
 
 	//* switch
 
