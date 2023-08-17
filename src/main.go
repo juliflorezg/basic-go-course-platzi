@@ -291,6 +291,39 @@ func main() {
 		if i == 7 {
 			break // break sale del ciclo actual
 		}
-
 	}
+
+	//> arrays
+
+	//* array de posiciones fijas, inmutable (no se puede agregar un elemento), por defecto va a tener 0 values
+	var array [4]int
+	fmt.Println(array) // [0 0 0 0]
+
+	array[0] = 1
+	array[1] = 2
+	fmt.Println(array, len(array), cap(array))
+
+	//> slice
+
+	slice := []int{0, 1, 2, 3, 4, 5, 6}
+
+	fmt.Println(slice, len(slice), cap(slice))
+
+	//> slicing
+
+	fmt.Println("Slicing:::")
+	// metodos en el slice
+	fmt.Println(slice[0])   // posición 0 -> 0
+	fmt.Println(slice[:3])  //  hasta la posición 3, no inclusivo al final -> [0 1 2]
+	fmt.Println(slice[2:4]) //  entre posiciones 2 y 4, inclusivo al inicio, no inclusivo al final -> [2, 3]
+	fmt.Println(slice[4:])  // a partir de la posición 4, inclusivo al inicio -> [4 5 6]
+
+	//* como adicionar elementos a un slice
+	slice = append(slice, 7)
+	fmt.Println(slice)
+	//* como adicionar otra lista a un slice
+	newSlice := []int{8, 9, 10}
+	slice = append(slice, newSlice...)
+	fmt.Println(slice)
+
 }
