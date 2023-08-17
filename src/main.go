@@ -361,9 +361,32 @@ func main() {
 	}
 
 	// crear una función que verifique si un string es un palindromo
-	// checkIfIsPalindrome("ana")
+	checkIfIsPalindrome("ana")
 	checkIfIsPalindrome("Ana")
-	// checkIfIsPalindrome("amor a roma")
-	// checkIfIsPalindrome("anal")
+	checkIfIsPalindrome("amor a roma")
+	checkIfIsPalindrome("Amor a Roma")
+	checkIfIsPalindrome("anal")
+
+	// maps (platzi)
+	myMap := make(map[string]int)
+
+	myMap["Jose"] = 20
+	myMap["Pepito"] = 22
+	fmt.Println(myMap)
+
+	// recorrer un map
+	for k, v := range myMap {
+		fmt.Println("key->", k, "value->", v)
+	}
+
+	// acceder a un valor de un map
+	myValue, ok := myMap["Jose"]
+	fmt.Println(myValue, ok)
+	// si no existe el valor, nos devuelve un zero value
+	myValue2 := myMap["Josep"]
+	fmt.Println(myValue2)
+	// para verificar que existe un valor, obtenemos una segunda variable (ok) al acceder a un valor de un map, que indica si este valor efectivamente existe
+	myValue3, ok := myMap["Josep"]
+	fmt.Println(myValue3, "Existe??", ok)
 
 }
