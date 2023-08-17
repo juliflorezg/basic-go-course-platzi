@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 )
 
 func printMessage(message string) {
@@ -21,6 +22,24 @@ func doubledValue(a int) int {
 
 func returnsTwoValues(a int) (b, c int) {
 	return a, a * 2
+}
+
+func checkIfIsPalindrome(text string) {
+	var myNewString string
+
+	for i := len(text) - 1; i >= 0; i-- {
+		// fmt.Println(strings.ToLower(string(text[i])))
+		// fmt.Println(strings.ToLower(text[i]))
+		myNewString += strings.ToLower(string(text[i]))
+	}
+
+	// fmt.Println(myNewString)
+
+	if strings.ToLower(text) == myNewString {
+		fmt.Println("it IS a palindrome")
+	} else {
+		fmt.Println("it is NOT a palindrome")
+	}
 }
 
 // go run src/main.go
@@ -325,5 +344,26 @@ func main() {
 	newSlice := []int{8, 9, 10}
 	slice = append(slice, newSlice...)
 	fmt.Println(slice)
+
+	//> recorrer slice con range
+	stringSlice := []string{"hola", "que", "hace"}
+	for i, value := range stringSlice {
+		fmt.Println("index:", i, "value:", value)
+	}
+
+	// si solo necesito el indice
+	for i := range stringSlice {
+		fmt.Println("index:", i)
+	}
+	// si solo necesito el valor
+	for _, value := range stringSlice {
+		fmt.Println("value:", value)
+	}
+
+	// crear una función que verifique si un string es un palindromo
+	// checkIfIsPalindrome("ana")
+	checkIfIsPalindrome("Ana")
+	// checkIfIsPalindrome("amor a roma")
+	// checkIfIsPalindrome("anal")
 
 }
