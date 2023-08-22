@@ -1,6 +1,7 @@
 package main
 
 import (
+	mypkg "curso_golang_platzi/src/mypackage"
 	"fmt"
 	"log"
 	"strconv"
@@ -425,4 +426,15 @@ func main() {
 	*p = *p / 37   // divide j a través del puntero
 	fmt.Println(j) // 73
 
+	// modulos
+	var myCar2 mypkg.CarPublic
+
+	myCar2.Brand = "Ferrari"
+	myCar2.Year = 2020
+	fmt.Println(myCar2)
+
+	// var myCar3 mypkg.carPrivate
+	// fmt.Println(myCar3)
+
+	mypkg.PrintMessage("Hellooooo")
 }
