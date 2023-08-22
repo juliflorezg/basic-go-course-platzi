@@ -42,6 +42,13 @@ func checkIfIsPalindrome(text string) {
 	}
 }
 
+type car struct {
+	brand string
+	year  int
+	color string
+	seats int
+}
+
 // go run src/main.go
 
 func main() {
@@ -388,5 +395,34 @@ func main() {
 	// para verificar que existe un valor, obtenemos una segunda variable (ok) al acceder a un valor de un map, que indica si este valor efectivamente existe
 	myValue3, ok := myMap["Josep"]
 	fmt.Println(myValue3, "Existe??", ok)
+
+	// como instanciar un struct
+	myCar := car{brand: "Ford", year: 2018}
+
+	fmt.Println(myCar)
+
+	// otra manera de instanciar un struct
+	var otherCar car
+	otherCar.brand = "Ferrari"
+	fmt.Println(otherCar)
+
+	myBestCar := car{"Porsche", 2017, "red", 2}
+	fmt.Println(myBestCar)
+
+	// pointers
+	i, j := 42, 2701
+
+	p := &i // apunta a i
+
+	fmt.Println("puntero p al valor i:", p)
+	fmt.Println("leer i por medio del puntero p:", *p)
+	*p = 69
+	fmt.Println("nuevo valor de i:", i)
+	fmt.Println(j)
+
+	p = &j // apunta al valor en memoria de j
+
+	*p = *p / 37   // divide j a través del puntero
+	fmt.Println(j) // 73
 
 }
