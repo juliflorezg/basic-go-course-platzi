@@ -2,6 +2,7 @@ package main
 
 import (
 	mypkg "curso_golang_platzi/src/mypackage"
+	"curso_golang_platzi/src/pointers"
 	"fmt"
 	"log"
 	"strconv"
@@ -50,22 +51,22 @@ type car struct {
 	seats int
 }
 
-type pc struct {
-	ram     int
-	storage int
-	brand   string
-}
+// type pc struct {
+// 	ram     int
+// 	storage int
+// 	brand   string
+// }
 
-// así se le agregan funciones a un struct
-func (myPC pc) ping() {
-	fmt.Println(myPC.brand, "pong")
-}
+//* así se le agregan funciones a un struct
+// func (myPC pc) ping() {
+// 	fmt.Println(myPC.brand, "pong")
+// }
 
-// aquí se pasa el valor por referencia (puntero)
-func (myPC *pc) duplicateRam() {
-	// myPC.ram = myPC.ram * 2
-	myPC.ram *= 2
-}
+//* aquí se pasa el valor por referencia (puntero)
+// func (myPC *pc) duplicateRam() {
+// 	// myPC.ram = myPC.ram * 2
+// 	myPC.ram *= 2
+// }
 
 // go run src/main.go
 
@@ -470,16 +471,16 @@ func main() {
 	*b = 138
 	fmt.Println(a)
 
-	myPc := pc{ram: 32, storage: 500, brand: "Beelink"}
+	myPc := pointers.Pc{Ram: 32, Storage: 500, Brand: "Beelink"}
 
 	fmt.Println(myPc)
 	fmt.Println(myPc)
 
-	myPc.ping()
+	myPc.Ping()
 
 	fmt.Println(myPc)
-	myPc.duplicateRam()
+	myPc.DuplicateRam()
 	fmt.Println(myPc)
-	myPc.duplicateRam()
+	myPc.DuplicateRam()
 	fmt.Println(myPc)
 }
