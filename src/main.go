@@ -50,6 +50,23 @@ type car struct {
 	seats int
 }
 
+type pc struct {
+	ram     int
+	storage int
+	brand   string
+}
+
+// así se le agregan funciones a un struct
+func (myPC pc) ping() {
+	fmt.Println(myPC.brand, "pong")
+}
+
+// aquí se pasa el valor por referencia (puntero)
+func (myPC *pc) duplicateRam() {
+	// myPC.ram = myPC.ram * 2
+	myPC.ram *= 2
+}
+
 // go run src/main.go
 
 func main() {
@@ -437,4 +454,32 @@ func main() {
 	// fmt.Println(myCar3)
 
 	mypkg.PrintMessage("Hellooooo")
+
+	//punteros #2 -> pointer is a variable that contains the address of some other value
+
+	// https://youtu.be/NKTfNv2T0FE?t=1088
+	// https://www.digitalocean.com/community/conceptual-articles/understanding-pointers-in-go-es
+
+	a := 69
+	b := &a
+
+	// fmt.Println(a)
+	fmt.Println(b)  // 0xc00000a530
+	fmt.Println(*b) // 69
+
+	*b = 138
+	fmt.Println(a)
+
+	myPc := pc{ram: 32, storage: 500, brand: "Beelink"}
+
+	fmt.Println(myPc)
+	fmt.Println(myPc)
+
+	myPc.ping()
+
+	fmt.Println(myPc)
+	myPc.duplicateRam()
+	fmt.Println(myPc)
+	myPc.duplicateRam()
+	fmt.Println(myPc)
 }
