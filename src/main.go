@@ -1,6 +1,7 @@
 package main
 
 import (
+	interfaces "curso_golang_platzi/src/interfaces"
 	mypkg "curso_golang_platzi/src/mypackage"
 	"curso_golang_platzi/src/pointers"
 	"fmt"
@@ -483,4 +484,15 @@ func main() {
 	fmt.Println(myPc)
 	myPc.DuplicateRam()
 	fmt.Println(myPc)
+
+	cuadrado1 := interfaces.Cuadrado{Base: 2}
+	rectangulo1 := interfaces.Rectangulo{Base: 5, Altura: 2}
+
+	interfaces.CalcularArea(cuadrado1)
+	interfaces.CalcularArea(rectangulo1)
+
+	listaDeInterfaces := []interface{}{"hello", 33, 6.9}
+
+	fmt.Println(listaDeInterfaces...)
+
 }
