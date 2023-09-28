@@ -2,30 +2,19 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
 
-func say(text string, wg *sync.WaitGroup) {
-
-	defer wg.Done()
-	fmt.Println(text)
+// chan<- significa que este channel solo va a ser de entrada de datos
+func say(text string, c chan<- string) {
+	// aquí le decimos que vamos a mandar el dato text por el channel c
+	c <- text
 }
 
 func main() {
+	fmt.Println("Hello")
+	c := make(chan string)
+	go say("bye", c)
 
-	// agregar un wait group
-	var wg sync.WaitGroup
-	fmt.Println("hello")
-	wg.Add(2)
-	go say("Bye", &wg)
-
-	// wg.Add(1)
-
-	go func(text string, wg *sync.WaitGroup) {
-		defer wg.Done()
-		fmt.Println(text)
-	}("jeje", &wg)
-
-	wg.Wait()
-	// time.Sleep(time.Second * 1)
+	// con esta sintaxis <-c estamos diciendo que vamos a sacar los datos del channel
+	fmt.Println(<-c)
 }
